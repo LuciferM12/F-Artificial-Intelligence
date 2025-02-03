@@ -21,4 +21,11 @@ let rec reverse xs =
     | [] -> []
     | x :: xs -> reverse xs @ [x]
 
-printf "reverse: %A" (reverse [1;2;3])
+printf "reverse: %A\n" (reverse [1;2;3])
+
+let rec reverseUsingAppend xs =
+    match xs with
+    | [] -> []
+    | x :: xs -> append (reverseUsingAppend xs) [x]
+
+printf "reverseUsingAppend: %A" (reverseUsingAppend [1])
